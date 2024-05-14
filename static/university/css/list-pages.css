@@ -1,0 +1,41 @@
+/* university/css/list-pages.css */
+
+body {
+    background-color: rgb(220, 220, 220);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+h1 {
+    color: #e41a13;
+}
+
+li {
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+a {
+    all: unset;
+    cursor: pointer;
+    color: blue;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.paginator-container {
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+.paginator {
+    color: blue;
+}
