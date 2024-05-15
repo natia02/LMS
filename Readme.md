@@ -41,3 +41,5 @@ The application should now be accessible at `http://127.0.0.1:8000/` this is the
 
 From the page `http://127.0.0.1.8000/admin` you can log in as a superuser.
 
+usernames and passwords for students are: student1 - something123, student2 -something12, student3 - something12
+for professors: professor1 - p12345678, professor2 - p12345678, professor3 - p12345678, 
