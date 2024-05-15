@@ -1,0 +1,12 @@
+{% extends 'includes/base.html' %}
+
+{% block title %}List of Subjects{% endblock %}
+
+{% block content %}
+    <h1>List of Subjects</h1>
+    <ul>
+        {% for subject in subjects %}
+            <li class="list-item"><a href="/subject/{{ subject.id }}">{{ subject.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

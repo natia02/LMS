@@ -1,0 +1,26 @@
+{% extends 'includes/base.html' %}
+
+{% block title %}Faculty - {{ faculty.name }}{% endblock %}
+
+{% block content %}
+    <h2>{{ faculty.name }}</h2>
+    <h3>Subjects of {{ faculty.name }}</h3>
+    {% if not subjects %}
+        <p>There are no subjects of {{ faculty.name }} in the database.</p>
+    {% endif %}
+    <ul>
+        {% for subject in subjects %}
+            <li class="list-item"><a href="/subject/{{ subject.id }}">{{ subject.title }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <h3>Professors of {{ faculty.name }}</h3>
+    {% if not lecturers %}
+        <p>There are no professors of {{ faculty.name }} in the database.</p>
+    {% endif %}
+    <ul>
+        {% for lecturer in lecturers %}
+            <li class="list-item"><a href="/lecturer/{{ lecturer.id }}">{{ lecturer.name }} {{ lecturer.surname }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

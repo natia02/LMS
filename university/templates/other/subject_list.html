@@ -1,0 +1,22 @@
+{% extends 'includes/base.html' %}
+
+{% block title %}List of Subjects{% endblock %}
+
+{% block content %}
+    <h1>List of Subjects</h1>
+    <ul>
+        {% for subject in subjects %}
+            <li class="list-item"><a href="/subject/{{ subject.id }}">{{ subject.title }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <div class="paginator-container">
+        {% if subjects.has_previous %}
+            <a class="paginator" href="?page={{ subjects.previous_page_number }}">Previous</a>
+        {% endif %}
+        <span class="paginator-text">Page {{ subjects.number }} of {{ subjects.paginator.num_pages }}.</span>
+        {% if subjects.has_next %}
+            <a class="paginator" href="?page={{ subjects.next_page_number }}">Next</a>
+        {% endif %}
+    </div>
+{% endblock %}

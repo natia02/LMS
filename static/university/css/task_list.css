@@ -1,0 +1,17 @@
+.task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task-item {
+    margin-bottom: 20px;
+}
+
+.task-item a {
+    color: blue;
+    text-decoration: underline;
+}
+
+.task-item a:hover {
+    text-decoration: none;
+}

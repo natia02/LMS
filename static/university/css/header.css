@@ -43,3 +43,16 @@ nav {
     cursor: pointer;
     text-align: center;
 }
+
+.create_task{
+    margin-right: -1050px;
+    width: 150px;
+    height: 40px;
+    background-color: #e41a13;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}

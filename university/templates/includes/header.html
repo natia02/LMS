@@ -2,6 +2,34 @@
 <link rel="stylesheet" type="text/css" href="{% static 'university/css/header.css' %}">
 <header class="header">
     <nav>
-        <a href="{% url 'home' %}"><img class="logo" src="{% static 'university/img/logo.png' %}" alt="Logo"></a>
+        <a href="http://127.0.0.1:8000/"><img class="logo" src="{% static 'university/img/logo.png' %}" alt="Logo"></a>
+        <a class="text-navs" href="{% url 'lecturers' %}">Professors</a>
+        <a class="text-navs" href="{% url 'subjects' %}">Subjects</a>
+        {% if user.is_authenticated %}
+            {% if is_student %}
+                <a class="text-navs" href="{% url 'student_subject' %}">Your Subjects</a>
+            {% endif %}
+            {% if is_professor %}
+                <a class="text-navs" href="{% url 'list_tasks' %}">Tasks</a>
+            {% endif %}
+        {% endif %}
     </nav>
+
+    {% csrf_token %}
+    {% if not user.is_authenticated %}
+        <a href="{% url 'login' %}">
+            <button class="login">Log in</button>
+        </a>
+    {% else %}
+        {% if is_professor %}
+            <form action="{% url 'create-task' %}">
+            {% csrf_token %}
+                <button type="submit" class="create_task">Create Task</button>
+            </form>
+        {% endif %}
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+                <button type="submit" class="logout_button">Logout</button>
+        </form>
+    {% endif %}
 </header>
